@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "eggy-map": {
+      "command": "./scripts/run-mcp.sh",
+      "args": [],
+      "cwd": "."
+    }
+  }
+}

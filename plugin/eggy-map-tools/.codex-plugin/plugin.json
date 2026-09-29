@@ -1,0 +1,25 @@
+{
+  "name": "eggy-map-tools",
+  "version": "0.1.0",
+  "description": "Eggy map design, anonymous references, component lookup and version-pinned local editing",
+  "author": {
+    "name": "zzzlazy"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "蛋仔地图工具",
+    "shortDescription": "设计地图、查询组件并编辑本地地图",
+    "longDescription": "通过版本锁定目录、完整备份和原子部署查询组件、检查地图、添加删除组件、修复阻塞删除的本地上传失败状态及回滚。",
+    "developerName": "zzzlazy",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "规划地图的玩法、场景与基础件装配方案。",
+      "查找当前版本可用的地图组件。",
+      "检查一个地图并安全添加或删除组件。",
+      "修复因上传失败状态而无法删除的地图。",
+      "查看部署记录并在需要时完整回滚。"
+    ]
+  }
+}

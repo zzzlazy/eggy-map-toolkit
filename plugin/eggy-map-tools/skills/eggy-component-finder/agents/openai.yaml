@@ -1,0 +1,12 @@
+interface:
+  display_name: "蛋仔组件查询"
+  short_description: "查询组件、模型、属性与可写证据"
+  default_prompt: "使用 $eggy-component-finder 查找当前版本的地图组件及其可写状态。"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "eggy-map"
+      description: "本地版本锁定的蛋仔地图组件目录"
+      transport: "stdio"
+policy:
+  allow_implicit_invocation: true

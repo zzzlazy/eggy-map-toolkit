@@ -1,0 +1,453 @@
+{
+  "schema_version": 1,
+  "catalog_kind": "eggy_visual_world_design_space",
+  "shared_references": [
+    "references/world-shells-and-keyframes.md#先选场所形态",
+    "references/world-shells-and-keyframes.md#从壳体卡分配基本件",
+    "references/theme-adaptation-audit.md#装配族适配",
+    "references/theme-adaptation-audit.md#八项全局复核"
+  ],
+  "worlds": [
+    {
+      "id": "canyon_mountain_cave",
+      "label": "峡谷/山地/洞穴",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#1-自然峡谷山地与洞穴"
+      ],
+      "world_sentence_pattern": "一种自然过程与一段旧工程共同改变峡谷，玩家沿仍可辨认的结构向一个光口、山口或深层目标推进。",
+      "memory_silhouette": "不对称崖壁夹出一处远期门形，工程栈道或洞口横跨其中。",
+      "proportion_words": ["厚重", "不对称", "纵深"],
+      "base_shape_roles": [
+        {"shape": "非均匀方块", "roles": ["岩层主质量", "连续接触台"]},
+        {"shape": "棱柱", "roles": ["斜坡", "断面", "外挑岩片"]},
+        {"shape": "薄片", "roles": ["层理", "裂隙边", "积雪或苔藓覆盖"]},
+        {"shape": "圆柱或锥体", "roles": ["岩柱", "洞内垂向参照", "旧工程支撑"]}
+      ],
+      "assembly_families": ["岩壁段", "转角崖段", "洞口框", "栈道支座", "侵蚀或落石簇"],
+      "material_rhythm": "三至五级同色大岩面形成底层，路线接触面保持更稳定的明度；裂隙、积雪、苔藓或熔岩只沿环境过程和受力边出现。",
+      "state_axes": ["坍塌前—坍塌后", "洞内压暗—洞口天光", "干燥—积雪/苔藓/熔岩侵蚀"],
+      "shell_starts": ["linear_corridor", "vertical_stack", "hub_spoke"],
+      "primitive_expansion": {
+        "mass": "先用少量错高、倾斜的大岩块闭合地面、主侧壁和远期山口，不用同尺寸石块排墙。",
+        "mid": "把断层、转角收缝、洞口厚度、栈道承重与护边展开成可复用段，并给每段入口、出口和转角变体。",
+        "route_contact": "合法落点使用连续代理；视觉岩片可以细分，但不得改变已标定跳距或把裂隙伪装成可走面。",
+        "state_detail": "侵蚀层、碎落、尘雾和导向光集中在状态源、转折和关键镜头，不铺满不可见背面。",
+        "proxy_split": "岩片、草叶和雾默认无物理少投影；地面、阻挡和栈道由独立连续碰撞体承担。"
+      },
+      "proof_gates": ["黑白剪影能分出合法山口与危险断崖", "至少一处洞内外转场改变包裹和光向", "一次坠落恢复能立即看见当前层与下一目标"],
+      "banned_shortcuts": ["同尺寸石块均匀砌墙", "只换岩石 Prefab 不建立地层方向", "用逆光或浓雾吞掉落点边界"]
+    },
+    {
+      "id": "tropical_mud_character_world",
+      "label": "热带泥地/角色场景",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#1-自然峡谷山地与洞穴",
+        "references/visual-theme-playbooks.md#4-玩具糖果童话与微缩世界"
+      ],
+      "world_sentence_pattern": "潮湿泥地里的巨大角色或生物正在完成一项会改写地形的动作，玩家借根系、身体部位与留下的痕迹穿越。",
+      "memory_silhouette": "一处可辨角色轮廓横跨泥地，根系或工具把它与路线连接。",
+      "proportion_words": ["柔软", "潮湿", "巨物微缩"],
+      "base_shape_roles": [
+        {"shape": "压扁方块或曲面", "roles": ["泥地起伏", "脚印和积水盆地"]},
+        {"shape": "圆柱", "roles": ["根系", "茎秆", "角色肢体"]},
+        {"shape": "球体或圆角体", "roles": ["角色关节", "果实", "泥泡"]},
+        {"shape": "棱柱或薄片", "roles": ["叶片", "工具面", "路线边缘"]}
+      ],
+      "assembly_families": ["泥岸地貌段", "根系拱门", "热带植被簇", "角色身体或工具模块", "动作交接平台"],
+      "material_rhythm": "泥面以低光泽大面为主，湿边、积水和新痕迹提高反差；角色材质与植被分家，路线不能只靠绿色或棕色相区分。",
+      "state_axes": ["干泥—湿泥/新脚印", "角色待机—动作完成", "雨前—雨后水位或流向"],
+      "shell_starts": ["linear_corridor", "open_district", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "用连续泥岸和角色主轮廓先定义低洼、包裹与尺度，不把植被当作地形边界。",
+        "mid": "根系分叉、叶片层级、关节连接、工具握持与泥岸折边形成重复语法，接口随角色动作保留净空。",
+        "route_contact": "把可踩泥脊、角色身体和工具面独立标记；软视觉表皮不改变真实接触代理。",
+        "state_detail": "脚印、泥滴、倾倒植物和动作后痕迹只沿因果路径生成，让玩家能回望比较。",
+        "proxy_split": "叶片、泥滴和角色表皮多为无碰撞视觉件；泥岸、身体可踩面与动作扫掠使用独立代理。"
+      },
+      "proof_gates": ["角色既是尺度锚点又参与真实动作或路线变化", "动作前后至少一个同机位世界差异可见", "植被簇之间保留清晰中景路径"],
+      "banned_shortcuts": ["把普通峡谷染绿称为热带", "平均散布植物导致没有泥地结构", "只放吉祥物雕像却不改变空间或动作"]
+    },
+    {
+      "id": "winter_garden_showcase",
+      "label": "冬季花园/展示",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#7-冬季花园与季节景观"
+      ],
+      "world_sentence_pattern": "一处冬季花园围绕可参与的庆典、换景或点亮事件逐步苏醒，玩家在可达景观簇之间停留和返回。",
+      "memory_silhouette": "主树、冰湖或暖光亭形成远景核心，多个活动岛在中景围合。",
+      "proportion_words": ["开阔", "簇状", "冷暖对照"],
+      "base_shape_roles": [
+        {"shape": "圆柱", "roles": ["树干", "灯杆", "亭柱"]},
+        {"shape": "球体或冠状体", "roles": ["树冠", "雪团", "花簇"]},
+        {"shape": "曲面或薄片", "roles": ["冰湖", "雪丘", "岸线"]},
+        {"shape": "方块或拱件", "roles": ["活动亭", "市集立面", "合影框"]}
+      ],
+      "assembly_families": ["大中小植被簇", "湖岸或雪丘段", "活动亭", "合影框", "灯光地标与换景门架"],
+      "material_rhythm": "冷色季节大面留出安静区，暖色只聚焦可达活动和返回中心；雪顶遵循承接面，冰面与实地在明度和边缘厚度上分开。",
+      "state_axes": ["未点亮—庆典点亮", "静雪—活动雪效", "冬季—融雪/花开换景"],
+      "shell_starts": ["showcase_panorama", "hub_spoke", "open_district"],
+      "primitive_expansion": {
+        "mass": "先完成地形岛、湖岸和主树或亭的三层构图，再决定植被数量。",
+        "mid": "用有限树冠、枝干、雪顶、花坛边和亭架模块组成大小不同的簇，保留方向与留白。",
+        "route_contact": "活动台、桥和湖岸用连续代理，拍照站位与多人回转区不得被枝叶或雪堆侵入。",
+        "state_detail": "灯串、雪效、花开和反射只在当前活动焦点增亮，非当前区降级为静态轮廓。",
+        "proxy_split": "树叶、花草、积雪边和远景灯默认无物理少投影；接触岛与边界另设代理。"
+      },
+      "proof_gates": ["首屏同时有清楚前景角色、中景活动和远景地标", "至少两个活动点使用不同构图与参与动作", "多人合影站位与离开路线互不阻塞"],
+      "banned_shortcuts": ["植物和灯光平均铺满", "每个植被子件都碰撞投影", "只有不可达背景而没有可参与中景"]
+    },
+    {
+      "id": "cellar_food_facility",
+      "label": "酒窖/食品设施",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#2-工业工厂与机械设施",
+        "references/visual-theme-playbooks.md#10-学校住宅办公室与人类尺度室内"
+      ],
+      "world_sentence_pattern": "封闭食品设施中的发酵、灌装、烘焙或储藏流程发生故障，玩家沿能读懂的原料—加工—出料链穿越。",
+      "memory_silhouette": "拱形窖顶、巨型桶罐或烤炉与纵向管线形成压迫的生产中轴。",
+      "proportion_words": ["封闭", "厚重", "重复工位"],
+      "base_shape_roles": [
+        {"shape": "拱件或棱柱", "roles": ["窖顶", "炉口", "门洞厚度"]},
+        {"shape": "圆柱", "roles": ["木桶", "储罐", "瓶罐和管线"]},
+        {"shape": "方块或梁", "roles": ["货架", "工作台", "墙跨和支撑"]},
+        {"shape": "圆环或薄片", "roles": ["桶箍", "阀门", "标签和压力刻度"]}
+      ],
+      "assembly_families": ["窖顶墙跨", "桶架或罐阵", "管线阀门站", "加工工作台", "排水与压力标记", "服务门槛"],
+      "material_rhythm": "砖石或墙板承担大面，木、金属与食品表面按功能分区；污渍只沿进料、热源、泄漏与排水路径积累。",
+      "state_axes": ["待机—加工—故障", "空容器—满载—出料", "安全液位—上涨压力"],
+      "shell_starts": ["room_sequence", "linear_corridor", "vertical_stack"],
+      "primitive_expansion": {
+        "mass": "先建立窖顶/厂房壳、地面坡度和大桶罐的压迫关系，确保每个房间有明确生产功能。",
+        "mid": "桶箍、架梁、阀门、管路来源去向、炉门和排水沟构成可信设备链，不用散箱补密度。",
+        "route_contact": "工作面、维护通道、容器顶部和逃生高台分别标定；上涨面与下一路线必须同屏可读。",
+        "state_detail": "蒸汽、液位、指示灯、输送物和泄漏痕迹只对应真实流程状态。",
+        "proxy_split": "瓶罐、标签、蒸汽与管线细件多为无碰撞视觉件；货架、罐体和通道用简化代理。"
+      },
+      "proof_gates": ["至少一条设备链有来源、加工和去向", "房间身份在隐藏文字后仍可由结构读出", "压力面、逃生层和恢复点不互相遮挡"],
+      "banned_shortcuts": ["几个桶和箱子冒充食品设施", "工业灰盒只换成棕红色", "全场污渍蒸汽遮住操作与落点"]
+    },
+    {
+      "id": "modern_city_narrative",
+      "label": "现代城市/剧情空间",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#3-城市街区古建与城堡",
+        "references/visual-theme-playbooks.md#10-学校住宅办公室与人类尺度室内"
+      ],
+      "world_sentence_pattern": "一座现代城市因人口、天气或基础设施事件改变日常秩序，玩家通过公共地标与室内门槛追踪变化。",
+      "memory_silhouette": "一个公共地标跨越高低街墙，交通或天气状态沿街区留下可回望的方向线。",
+      "proportion_words": ["人类尺度", "分区清楚", "垂直层叠"],
+      "base_shape_roles": [
+        {"shape": "方块", "roles": ["楼体大面", "街墙", "室内房间"]},
+        {"shape": "薄片或梁", "roles": ["檐口", "雨棚", "道路边和桥"]},
+        {"shape": "圆柱", "roles": ["灯杆", "交通设施", "设备管线"]},
+        {"shape": "曲面或圆环", "roles": ["站口", "公共地标", "道路转角"]}
+      ],
+      "assembly_families": ["街区立面", "道路接触与街角", "交通门槛", "公共地标", "室内剧情门槛", "状态道具簇"],
+      "material_rhythm": "建筑大面、基座、玻璃/金属和道路各自稳定；近景任务处增加缝、标牌和生活痕迹，远景楼群保留低成本轮廓。",
+      "state_axes": ["有人—空城/疏散", "停运—恢复供电或交通", "晴朗—雨夜/灾后"],
+      "shell_starts": ["open_district", "hub_spoke", "multi_scene_threshold", "room_sequence"],
+      "primitive_expansion": {
+        "mass": "先用街墙高度、道路宽窄和地标视线划分区块，远景楼体不逐层做成可玩室内。",
+        "mid": "标准/转角立面、站口、连廊、雨棚、街道设施和室内门槛共享层高与接口。",
+        "route_contact": "人行、屋顶、室内和交通路径明确分层；门、梯、栏杆按目标人数与真实相机放大。",
+        "state_detail": "人物、雨伞、灯窗、路障、屏幕与设施开关集中在剧情镜头并由同一状态所有者驱动。",
+        "proxy_split": "远景窗格、广告、人物群与室内小物降级为无碰撞视觉层；高频路径保留连续代理。"
+      },
+      "proof_gates": ["至少两个公共地标支持无文字定位", "一次状态变化能在同机位改变人口或设施关系", "街景与室内切换后控制恢复仍有明确方向"],
+      "banned_shortcuts": ["只做不可达天际线", "复制方盒楼后均匀贴窗", "用长文本代替街区状态与导航"]
+    },
+    {
+      "id": "school_human_scale_interior",
+      "label": "学校/人类尺度室内",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#10-学校住宅办公室与人类尺度室内"
+      ],
+      "world_sentence_pattern": "一组具备真实功能关系的人类尺度房间因停电、课程、封锁或任务发生变化，玩家通过门槛与设施完成连续动线。",
+      "memory_silhouette": "重复走廊节奏被一处楼梯、礼堂、实验室设备或出口中断。",
+      "proportion_words": ["人类尺度", "规则", "功能分区"],
+      "base_shape_roles": [
+        {"shape": "方块或薄板", "roles": ["墙地顶", "桌柜", "房间壳"]},
+        {"shape": "圆柱", "roles": ["桌腿", "管线", "灯具"]},
+        {"shape": "棱柱或圆环", "roles": ["椅背", "风口", "门窗和设备轮廓"]},
+        {"shape": "条形件", "roles": ["踢脚线", "天花网格", "标识基线"]}
+      ],
+      "assembly_families": ["标准与转角走廊跨", "功能房间跨", "门窗族", "家具簇", "机电附着", "楼梯电梯前室"],
+      "material_rhythm": "墙地顶先形成稳定层级，不同功能房只改变一至两种材料和设备；磨损、告示和杂物沿使用行为出现。",
+      "state_axes": ["常态—停电/应急照明", "开放—封锁/解锁", "有人使用—撤离或异常占用"],
+      "shell_starts": ["room_sequence", "hub_spoke", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先闭合房间、走廊和垂直交通，按门洞视线安排下一出口，不复制无功能空盒。",
+        "mid": "把门窗、天花网格、家具轮廓、机电和房间接口做成少量稳定族，再按功能生成变体。",
+        "route_contact": "桌群、柜体和门扇的视觉细分不侵入多人净宽、转角相机或动态门扫掠。",
+        "state_detail": "灯光、房号、设备、人物与封锁物表达房间状态，关键出口同时有形状和亮度线索。",
+        "proxy_split": "家具小件、告示和线缆默认无物理少投影；桌群、柜体和墙体用连续代理。"
+      },
+      "proof_gates": ["连续三个功能空间的身份无需长文字也能分辨", "门洞、家具与目标人数净宽经过相机测试", "状态变化后出口与安全路径仍可信"],
+      "banned_shortcuts": ["把房间做成同尺寸空仓库", "均匀网格填满桌椅", "装饰摄像头与真实检测边界不一致"]
+    },
+    {
+      "id": "industrial_mixed_scale",
+      "label": "工业/混合尺度",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#2-工业工厂与机械设施",
+        "references/visual-theme-playbooks.md#4-玩具糖果童话与微缩世界"
+      ],
+      "world_sentence_pattern": "一条可读的生产、能源或维修系统因错误状态继续运行，玩家在厂房常规尺度与至少一个设备巨物尺度之间切换。",
+      "memory_silhouette": "巨大设备、罐体或机械臂被梁柱、平台和管线桥架完整承托。",
+      "proportion_words": ["规则网格", "厚重", "尺度跳变"],
+      "base_shape_roles": [
+        {"shape": "方块或薄板", "roles": ["梁柱", "墙板", "平台和设备外壳"]},
+        {"shape": "圆柱", "roles": ["管线", "轴", "罐体"]},
+        {"shape": "圆环", "roles": ["法兰", "轴承", "检修口"]},
+        {"shape": "棱柱", "roles": ["支撑", "导流罩", "平台侧脸"]}
+      ],
+      "assembly_families": ["厂房墙跨与屋架", "平台跨", "管线桥架", "生产工作站", "维护门架", "巨物尺度锚点"],
+      "material_rhythm": "结构大面低饱和，接触边与维修路径有磨损；路线、危险、待机、运行和故障使用稳定且互不冲突的角色色。",
+      "state_axes": ["待机—运行—故障", "断电—应急—恢复", "常规厂房—设备内部巨物尺度"],
+      "shell_starts": ["room_sequence", "linear_corridor", "open_district", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先完成地面、厂房墙跨、屋架、平台侧脸和主设备底座，再放机关与箱子。",
+        "mid": "梁柱节点、护栏、梯道、管线来源去向、法兰和维护口组成大部分可见密度。",
+        "route_contact": "生产线、维护线与巨物内部路径分别标定，运动机关和相机扫掠保持独立净空。",
+        "state_detail": "指示灯、运动、声音、输送物和泄漏只由真实机器状态驱动，故障区有稳定恢复。",
+        "proxy_split": "小管、线缆、灯罩和紧固件无物理少投影；设备外形与可走平台用简化连续代理。"
+      },
+      "proof_gates": ["隐藏机器 Prefab 后仍有可信厂房壳体", "至少一条生产链可从来源追到去向", "尺度转换有两个熟悉锚点和安全控制恢复"],
+      "banned_shortcuts": ["传送带箱子警示灯排列成灰盒", "悬空管线没有接口或支撑", "满场闪烁掩盖机关预告"]
+    },
+    {
+      "id": "island_survival_world",
+      "label": "岛屿/生存资源世界",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#1-自然峡谷山地与洞穴",
+        "references/visual-theme-playbooks.md#7-冬季花园与季节景观"
+      ],
+      "world_sentence_pattern": "有限岛屿上的资源采集、建设或灾害过程持续改变可用空间，玩家能从地标和建筑阶段读出世界进度。",
+      "memory_silhouette": "中心庇护所或信标随建造阶段抬高，海岸、资源区和远期出口围绕它展开。",
+      "proportion_words": ["开阔", "资源分区", "逐级扩张"],
+      "base_shape_roles": [
+        {"shape": "曲面或非均匀方块", "roles": ["海岸", "高地", "资源地形"]},
+        {"shape": "圆柱", "roles": ["树干", "桩柱", "信标"]},
+        {"shape": "棱柱或薄板", "roles": ["屋顶", "桥板", "帆和坡面"]},
+        {"shape": "方块或梁", "roles": ["建造模块", "仓储", "防御边"]}
+      ],
+      "assembly_families": ["海岸地貌单元", "资源簇", "建造地块", "庇护所等级变体", "码头或桥段", "信标与逃离门"],
+      "material_rhythm": "自然大面按海岸—植被—岩地分区，建筑材料随等级增加结构层而非只换颜色；采空、损坏和修复痕迹留在来源处。",
+      "state_axes": ["资源充足—枯竭—再生", "庇护所一级—多级扩建", "平静—昼夜/天气/灾害"],
+      "shell_starts": ["open_district", "hub_spoke", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先划定岛岸、高地、庇护中心和可扩张边界，保证至少两个交叉参照而非一块空旷地板。",
+        "mid": "资源簇、桥段、桩基、墙跨、屋顶与仓储按阶段共享接口，让升级真实增加结构。",
+        "route_contact": "采集、搬运、建设、防守和逃离路径分层，扩建后不得封死恢复或多人回流。",
+        "state_detail": "库存载体、施工轮廓、损坏面、天气遮蔽和信标强度与权威状态同步。",
+        "proxy_split": "密集植被、散石、绳索与建筑表皮多为视觉件；岛岸、建筑占地和交互面使用稳定代理。"
+      },
+      "proof_gates": ["至少一次升级在同机位改变轮廓和可用空间", "资源来源、加工/建造目标和存量载体都可见", "岛屿有返回网络和扩张边界而非空地散点"],
+      "banned_shortcuts": ["装饰小岛没有资源与建造状态", "升级只换颜色或数字", "远景很满但采集与回流路径没有结构"]
+    },
+    {
+      "id": "vehicle_track_facility",
+      "label": "车辆/赛道设施",
+      "playbook_references": [
+        "references/world-shells-and-keyframes.md#先选场所形态",
+        "references/visual-theme-playbooks.md#3-城市街区古建与城堡"
+      ],
+      "world_sentence_pattern": "一条有明确地点身份的交通或赛事设施通过弯道、坡度、服务区与环境过程组织高速阅读，而不是把步行平台放大。",
+      "memory_silhouette": "一处标志性弯道、跨线门或高差在远景与赛道连续侧脸同时出现。",
+      "proportion_words": ["高速尺度", "连续", "外向框景"],
+      "base_shape_roles": [
+        {"shape": "薄板或曲面", "roles": ["连续路面", "缓和坡和弯道"]},
+        {"shape": "棱柱或楔体", "roles": ["路肩", "倾斜弯", "高差侧脸"]},
+        {"shape": "梁或圆柱", "roles": ["护栏", "桥墩", "照明和标记"]},
+        {"shape": "拱件或圆环", "roles": ["跨线门", "隧道口", "维修设施"]}
+      ],
+      "assembly_families": ["直道与弯道段", "坡道与高差侧脸", "内外护栏", "隧道或跨线门", "维修复位区", "看台或环境框景"],
+      "material_rhythm": "路面大面保持低噪声，边线、制动点、危险边和复位口用形状加亮度编码；胎痕、接缝和灯带集中在决策前后。",
+      "state_axes": ["起跑—比赛—完赛", "正常—事故/维修", "干地—雨雪或低能见度"],
+      "shell_starts": ["loop_track", "linear_corridor", "open_district", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先建立连续道路中心线、坡度、弯道半径与外部地形或建筑质量，不能由零散平台拼出高速路线。",
+        "mid": "路面侧脸、桥墩、护栏、隧道厚度、制动标记与维修区形成赛道设施的主要密度。",
+        "route_contact": "以真实车辆包络标定路宽、弯前视距、落差、复位口和多人并行，不沿用步行尺度。",
+        "state_detail": "起跑灯、路况、维修提示、观众焦点与事故痕迹对应比赛状态且不遮住边线。",
+        "proxy_split": "观众、远景车辆、灯带和路面微缝降级；连续路面、护栏碰撞与复位边界单独维护。"
+      },
+      "proof_gates": ["完整一圈或目标路段的接触面连续无假缝", "最紧弯前能在真实速度看见出口和外边界", "失控后复位不反向、不穿模且立即重建方向"],
+      "banned_shortcuts": ["把步行机关等比放大称为赛道", "复制直路凑长度", "弯后盲墙或装饰遮住出口"]
+    },
+    {
+      "id": "toy_candy_fairy_miniature",
+      "label": "玩具/糖果/童话/微缩",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#4-玩具糖果童话与微缩世界"
+      ],
+      "world_sentence_pattern": "日常物、玩具或糖果在夜间/魔法状态下变成可进入的建筑与地形，玩家通过材料和接口读出巨物尺度。",
+      "memory_silhouette": "超大包装、桌面物或玩具关节围出一处可穿行的主地标。",
+      "proportion_words": ["饱满", "圆润", "巨物微缩"],
+      "base_shape_roles": [
+        {"shape": "大方块", "roles": ["积木", "糖块", "礼盒主体"]},
+        {"shape": "圆柱或球体", "roles": ["轮子", "糖果", "玩具关节"]},
+        {"shape": "圆环", "roles": ["发条", "包装框", "杯盘和扣件"]},
+        {"shape": "薄板", "roles": ["标签", "丝带", "纸边和卡片"]}
+      ],
+      "assembly_families": ["积木墙跨", "礼盒平台", "玩具关节", "糖果拱门", "包装或轨道段", "超大日常物地标"],
+      "material_rhythm": "塑料、纸、布、金属与糖晶用光泽、厚度和边缘区分；饱和色按角色成组，路线和危险保留独立语义。",
+      "state_axes": ["静止玩具—醒来运作", "未包装—组装/封装完成", "常规尺度—明确微缩尺度"],
+      "shell_starts": ["multi_scene_threshold", "room_sequence", "linear_corridor", "showcase_panorama"],
+      "primitive_expansion": {
+        "mass": "先用至少两个熟悉日常物建立角色比例和主空间，玩偶或糖果 Prefab 不能替代壳体。",
+        "mid": "卡扣、拼缝、盒盖、丝带折边、关节、铆钉和轨道接口组成可信结构。",
+        "route_contact": "把桌缘、包装边、玩具身体和糖块转化为明确地形，接触面仍按真实角色能力标定。",
+        "state_detail": "散落零件、标签、未封口箱和歪贴纸沿事件出现；高饱和焦点随章节迁移。",
+        "proxy_split": "纸边、丝带、标签和细关节多为视觉件；可踩巨物和包装轮廓使用简化代理。"
+      },
+      "proof_gates": ["两个熟悉物能让玩家复述自己缩小了多少", "至少一件物品真实转化为路线或交互", "隐藏玩偶资产后卡扣包装和材料语法仍成立"],
+      "banned_shortcuts": ["粉色彩灯加几个玩偶", "礼盒只有无厚度立方体", "所有饱和色都作为同权重强调"]
+    },
+    {
+      "id": "ancient_castle_historic_street",
+      "label": "古建/城堡/历史街区",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#3-城市街区古建与城堡"
+      ],
+      "world_sentence_pattern": "选定地域与时代规则的城堡、城镇或古建群因封锁、战争、节庆或修复发生变化，玩家沿街巷、屋顶与门楼辨认结构。",
+      "memory_silhouette": "门楼、塔楼或主殿压住高低屋顶线，一条巷道或桥把玩家引向开口。",
+      "proportion_words": ["厚重或纤细择一", "年代秩序", "街巷层叠"],
+      "base_shape_roles": [
+        {"shape": "方块或薄板", "roles": ["墙体", "基座", "檐口"]},
+        {"shape": "棱柱", "roles": ["坡屋顶", "扶壁", "城垛坡面"]},
+        {"shape": "圆柱", "roles": ["柱", "塔", "排水与支撑"]},
+        {"shape": "拱环或条形件", "roles": ["门窗", "窗棂", "栏杆和屋脊"]}
+      ],
+      "assembly_families": ["标准与转角立面", "门楼或城门", "屋顶段", "拱廊", "桥与阳台", "街道设施簇"],
+      "material_rhythm": "先选一个地域/时代的墙、基座、木/金属结构、屋顶和分缝规则；沉积、排水和修补沿重力与使用边发生。",
+      "state_axes": ["开放—封城/解锁", "完整—战损/修复", "日常—节庆或戒严"],
+      "shell_starts": ["open_district", "hub_spoke", "linear_corridor", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先建立街墙高低、屋顶线、塔楼/门楼和巷道开合，再做门窗与纹样。",
+        "mid": "层高、柱距、檐口、屋脊、承重、排水与桥接接口必须在模块之间统一。",
+        "route_contact": "门、梯、屋顶、阳台与城墙按玩家净空和相机标定；远景建筑不伪装成可达路线。",
+        "state_detail": "旗帜、门扇、灯火、封堵、破损和修补只在制度或事件状态发生处变化。",
+        "proxy_split": "远景窗棂、瓦片纹样、旗帜与人群降级；通行屋面、城墙边和门洞使用连续代理。"
+      },
+      "proof_gates": ["明确记录一个地域/时代的模块规则而非混搭素材包", "墙体屋顶与地面能解释承重和排水", "街巷至少有两个地标和一次开合节奏"],
+      "banned_shortcuts": ["每栋楼使用不同历史素材包", "门窗均匀贴图式排列", "只有纹样没有屋顶厚度承重与排水"]
+    },
+    {
+      "id": "scifi_station_cyber_facility",
+      "label": "科幻/空间站/赛博设施",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#5-科幻太空站与赛博设施"
+      ],
+      "world_sentence_pattern": "一座舱段化设施因断电、失压、扫描或数据污染逐区改变，玩家循着少量可信能量与结构接口前进。",
+      "memory_silhouette": "环形气闸、悬臂舱段或能源核心与远景天体形成主轴。",
+      "proportion_words": ["规则面板", "厚壁舱段", "局部发光"],
+      "base_shape_roles": [
+        {"shape": "薄板", "roles": ["舱壁面板", "装甲层", "控制面"]},
+        {"shape": "条形件", "roles": ["结构框", "轨道", "面板分缝"]},
+        {"shape": "圆环", "roles": ["气闸", "能源环", "扫描门"]},
+        {"shape": "圆柱或棱柱", "roles": ["导管", "装甲转角", "支座"]}
+      ],
+      "assembly_families": ["舱壁跨", "气闸门", "能源管线", "控制台", "悬空桥", "核心或天线地标"],
+      "material_rhythm": "低饱和大面与厚边框占主导，只有交互、能量和故障面发光；面板缝服从结构网格。",
+      "state_axes": ["断电—应急—恢复", "常压—失压封锁", "扫描中—通过/拒绝"],
+      "shell_starts": ["room_sequence", "linear_corridor", "multi_scene_threshold", "hub_spoke"],
+      "primitive_expansion": {
+        "mass": "先完成舱段厚度、外壳、气闸连接和核心体量，不用发光线勾勒空盒。",
+        "mid": "框架、面板分区、导管、锁扣、桥接支撑和控制台底座按统一网格展开。",
+        "route_contact": "可走舱面、失压边界、扫描区和悬桥净空分离；透明窗外内容不伪装成路线。",
+        "state_detail": "灯、门、能量流和声音同步权威状态，断电时仍保留安全与目标的形状线索。",
+        "proxy_split": "面板缝、线缆、星景与小灯为低成本视觉件；舱壁、门和桥使用厚实代理。"
+      },
+      "proof_gates": ["取得控制后能读出当前舱、下一舱和方向", "至少一种断电—恢复同时改变系统与空间反馈", "关闭所有发光后舱段厚度与接口仍成立"],
+      "banned_shortcuts": ["满屏霓虹线没有焦点", "环件悬空没有舱壁连接", "所有表面过薄而没有建筑或机器厚度"]
+    },
+    {
+      "id": "ocean_underwater_floating",
+      "label": "海洋/海底/漂浮世界",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#8-海洋海底与漂浮世界"
+      ],
+      "world_sentence_pattern": "潮位、水流、浮力或能见度使海床、沉船、遗迹或漂浮群岛的可达关系发生变化，玩家沿生物与结构地标定向。",
+      "memory_silhouette": "珊瑚塔、沉船肋骨、弧形洞口或浮岛链指向一束远期光柱。",
+      "proportion_words": ["流动", "弧形", "纵深雾化"],
+      "base_shape_roles": [
+        {"shape": "圆柱或锥体", "roles": ["珊瑚", "桅杆", "气泡流向"]},
+        {"shape": "弧环", "roles": ["洞口", "贝壳", "沉船肋骨"]},
+        {"shape": "薄板", "roles": ["船板", "水草", "漂浮面"]},
+        {"shape": "球体或大曲面", "roles": ["气泡", "卵石", "海床"]}
+      ],
+      "assembly_families": ["珊瑚簇", "礁石洞口", "沉船跨", "漂浮平台", "水流门架", "空气站或潮位标"],
+      "material_rhythm": "远景降低对比和饱和度，近景生物框住接触面，中景路线提高明度；透明、雾与粒子按视区限额。",
+      "state_axes": ["低潮—高潮", "顺流—逆流", "清晰—低能见度", "下沉—上浮"],
+      "shell_starts": ["vertical_stack", "linear_corridor", "hub_spoke", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先选择海床探索、沉船室内、漂浮群岛或垂直封套之一，并完成海床/岩壁/岛体主质量。",
+        "mid": "珊瑚层级、洞口厚度、船肋、平台系泊、水流门和空气站按方向组织。",
+        "route_contact": "安全落点、上方地标、侧向参照、下一框景、存档和坠落恢复逐层对账。",
+        "state_detail": "气泡、浮游物、潮线与能见度只强化流向和状态，不能取代路线边界。",
+        "proxy_split": "水草、薄珊瑚、气泡和远景无物理少投影；海床、岩壁和接触面使用稳定代理。"
+      },
+      "proof_gates": ["先声明具体海洋结构而非笼统水下", "前中远三层分别承担接触、下一动作和尺度", "水流或潮位变化有预告、结果和稳定恢复"],
+      "banned_shortcuts": ["把普通地图染蓝", "透明层叠让落点失去边界", "漂浮结构没有系泊方向与层级"]
+    },
+    {
+      "id": "horror_ruin_mystery",
+      "label": "恐怖/废墟/悬疑空间",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#6-恐怖废墟与悬疑空间"
+      ],
+      "world_sentence_pattern": "一个原本正常、功能可信的场所因封堵、侵蚀、错位或威胁状态逐步异常，但安全规则和出口标记始终可信。",
+      "memory_silhouette": "重复的正常门窗秩序被一处塌落、过长走廊或异常地标打断。",
+      "proportion_words": ["正常与异常对照", "局部压迫", "受损层叠"],
+      "base_shape_roles": [
+        {"shape": "方块或薄板", "roles": ["正常建筑壳", "家具和封堵"]},
+        {"shape": "棱柱", "roles": ["偏斜梁柱", "塌落段", "破损边"]},
+        {"shape": "圆柱或枝杈", "roles": ["管线", "枯木", "侵蚀脉络"]},
+        {"shape": "圆环或框件", "roles": ["重复门窗", "回望地标", "安全标记"]}
+      ],
+      "assembly_families": ["完整墙跨", "破损墙跨", "封门", "塌落段", "可回望地标", "光源簇与追逐门槛"],
+      "material_rhythm": "先建立正常材质秩序，再让潮湿、尘垢、裂损和异常色沿因果源扩散；黑暗隐藏次要信息而非脚下与出口。",
+      "state_axes": ["正常—受损—异常", "安全—威胁接近—恢复", "初见—回望改变"],
+      "shell_starts": ["room_sequence", "linear_corridor", "hub_spoke", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先按真实建筑、村落、矿井或工厂闭合正常壳体，再决定哪些结构被破坏或封堵。",
+        "mid": "门框、梁柱、房间接口和家具保留正常基线，破损变体只在少数节拍偏离。",
+        "route_contact": "安全区、追逐路线、门槛和失败恢复保持可读；装饰异常不得改变未声明碰撞。",
+        "state_detail": "暗窗、碎屑、血迹、声音和突亮围绕线索或空间后果出现，并有冷却与复位。",
+        "proxy_split": "碎屑、污迹、枝杈和雾多为视觉层；墙、门、掩体与威胁边界使用权威代理。"
+      },
+      "proof_gates": ["正常基线在没有恐怖装饰时仍是可信场所", "至少一次同机位回望能指出结构或状态变化", "脚下、安全区、威胁来源和出口在黑暗中仍可区分"],
+      "banned_shortcuts": ["纯黑空房配红灯", "血迹与破损平均铺满", "连续无因果跳吓或过长失败重跑"]
+    },
+    {
+      "id": "abstract_dream_music_data",
+      "label": "抽象/梦境/音乐/数据空间",
+      "playbook_references": [
+        "references/visual-theme-playbooks.md#9-抽象梦境音乐与数据空间"
+      ],
+      "world_sentence_pattern": "一条可复述的数学、节奏或状态规则持续生成和改写空间，玩家的动作能成为下一段几何或音画反馈。",
+      "memory_silhouette": "一个主符号、序列框或节拍门沿固定比例与角度重复并在终局闭合。",
+      "proportion_words": ["规则化", "留白", "状态聚焦"],
+      "base_shape_roles": [
+        {"shape": "方块或薄板", "roles": ["路径", "拍点", "序列基底"]},
+        {"shape": "圆环", "roles": ["目标", "节拍门", "状态闭环"]},
+        {"shape": "细线或梁", "roles": ["连接", "方向", "时序轨迹"]},
+        {"shape": "球体或主符号", "roles": ["当前状态", "事件焦点", "结果"]}
+      ],
+      "assembly_families": ["节拍门", "序列平台", "重复框景", "数据柱", "空间转场", "主符号地标"],
+      "material_rhythm": "背景、路线、危险、当前拍和目标分工；高饱和与发光只用于当前状态，规则间保留视觉休止。",
+      "state_axes": ["未激活—当前拍—已提交", "失真—重建", "输入—传播—闭合"],
+      "shell_starts": ["showcase_panorama", "linear_corridor", "arena_bowl", "multi_scene_threshold"],
+      "primitive_expansion": {
+        "mass": "先用极少几何族和一个明确比例/角度规则建立主轮廓与可走空间，不靠随机漂浮件填空。",
+        "mid": "把序列、框景、连接与主符号按参数变化展开，所有变体可由同一规则解释。",
+        "route_contact": "路径、判定面、危险和目标同时使用形状/明度线索，并提供静音可玩与安全相机口袋。",
+        "state_detail": "灯光、运动、音效和背景变形服从同一权威时间轴或状态机，休止段主动降噪。",
+        "proxy_split": "背景粒子、连线和装饰动画无物理；路径与判定代理保持稳定且不随视觉插值漂移。"
+      },
+      "proof_gates": ["玩家观察短节拍后能复述至少一条几何映射", "取得控制的首屏同时显示主轮廓、中景结构和最近动作", "静音与灰度下仍可完成核心判断"],
+      "banned_shortcuts": ["随机颜色和旋转冒充梦境", "所有物件漂浮而没有尺度", "背景特效比路线与判定反馈更强"]
+    }
+  ]
+}

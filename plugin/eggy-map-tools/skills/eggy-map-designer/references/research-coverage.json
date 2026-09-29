@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "primary_types": [
+    {
+      "id": "short_race",
+      "label": "短竞速",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-024.md"],
+      "boundary_refs": [],
+      "supported_claims": ["全局上涨压力下的封闭短路线", "窄基础件词汇与危险色分工"],
+      "next_gap": "90–120 秒完整多人计时、并行超车、复位和终点收束仍未实测。",
+      "next_entry_gate": "详情明确短时竞速与复位；单人可完成，最好有 2–4 人并行路线证据。"
+    },
+    {
+      "id": "chapter_challenge",
+      "label": "章节挑战",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-005.md",
+        "skill:eggy-map-designer/references/exemplars/case-010.md",
+        "skill:eggy-map-designer/references/exemplars/case-019.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["超长章节体量与颜色引导", "单规则长图变奏", "可见任务对象与章节合同"],
+      "next_gap": "中后段真实镜头、完整通关节奏和长距离失败恢复仍不完整。",
+      "next_entry_gate": "能低成本观察至少三个章节门槛、一次检查点恢复和一个明确终局。"
+    },
+    {
+      "id": "mechanism_puzzle",
+      "label": "机制解谜",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-007.md"],
+      "boundary_refs": [],
+      "supported_claims": ["房间式谜题合集", "共享房间接口", "延迟提示与逐层恢复线索"],
+      "next_gap": "渐进提示、错误归因、局部复位、越序保护与实际解题过程仍缺。",
+      "next_entry_gate": "同一规则逐级变化，能完整走完 2–4 个单元并观察错误反馈与局部重置。"
+    },
+    {
+      "id": "cooperative",
+      "label": "多人合作",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-015.md"],
+      "boundary_refs": [],
+      "supported_claims": ["角色权限与空间交付物", "章节交接与单人降级"],
+      "next_gap": "共享搬运、同步窗口、双人等待公平和掉队恢复仍未实测。",
+      "next_entry_gate": "双方独占动作会改变对方机会，并有共享对象或同步窗口及失败回收。"
+    },
+    {
+      "id": "narrative_exploration",
+      "label": "叙事探索",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-017.md",
+        "skill:eggy-map-designer/references/exemplars/case-003.md",
+        "skill:eggy-map-designer/references/exemplars/case-013.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["镜头与控制交接", "空间目标和选择反馈", "多场景门槛与房间状态词汇"],
+      "next_gap": "回访、跳过、结局提交、死亡/重进恢复和多人叙事仍缺完整验证。",
+      "next_entry_gate": "可单人完整观察至少一次场景转场、一次选择后果和干净重进。"
+    },
+    {
+      "id": "survival",
+      "label": "生存淘汰",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-018.md",
+        "skill:eggy-map-designer/references/exemplars/case-022.md"
+      ],
+      "boundary_refs": ["skill:eggy-map-designer/references/research-portfolio.md"],
+      "supported_claims": ["极简生存终局边界", "多模式、随机场地、生命与观战状态线索", "首屏奖励弹窗反例"],
+      "next_gap": "危险预告、完整阶段、多人公平、平局与连续第二局清理仍未实测。",
+      "next_entry_gate": "无强制奖励遮罩，能完整观察至少一轮危险升级、淘汰/观战和结算重启。"
+    },
+    {
+      "id": "score_contest",
+      "label": "积分争夺",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-009.md"],
+      "boundary_refs": [],
+      "supported_claims": ["选装与比赛分离", "阵营出生和常驻比分", "少资产高展开竞技场"],
+      "next_gap": "真实得分归属、反刷分、追赶、超时/平局与完整重置仍未实测。",
+      "next_entry_gate": "详情写明计分事件和终局条件；可单人观察准备、得分反馈和回合清理。"
+    },
+    {
+      "id": "social_showcase",
+      "label": "社交展示",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-020.md"],
+      "boundary_refs": [],
+      "supported_claims": ["前中远三层景深", "自我呈现控件与换景线索", "装饰性能职责"],
+      "next_gap": "可返回地标网络、多人停留、并发互动和合影净空仍未完整观察。",
+      "next_entry_gate": "至少三个可返回地标、一个多人活动点和明确的离开—换景—返回循环。"
+    },
+    {
+      "id": "management_simulation",
+      "label": "经营模拟",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-011.md",
+        "skill:eggy-map-designer/references/exemplars/case-014.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["生产依赖图", "货物、员工、顾客生命周期", "产品目录、持久化所有权和主动终点"],
+      "next_gap": "首次完整产出、升级后新瓶颈、经济平衡、并发归属和保存/读取仍未实测。",
+      "next_entry_gate": "能低成本走完输入—加工—交付—收益—升级，并允许验证干净重进。"
+    },
+    {
+      "id": "rhythm_performance",
+      "label": "纯音游/节奏演出",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/exemplars/case-016.md"],
+      "supported_claims": [],
+      "next_gap": "唯一谱面时钟、音画同源、判定窗、连击、延迟和序列清理全部缺正向案例。",
+      "next_entry_gate": "仅接受确切地图码，且详情同时出现 Perfect/Good/Miss 与 Combo/Score/结算两组中的至少两项。"
+    },
+    {
+      "id": "combat_boss",
+      "label": "Boss/PvE",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-006.md",
+        "skill:eggy-map-designer/references/research-portfolio.md"
+      ],
+      "supported_claims": [],
+      "next_gap": "完整预告—反制—输出窗、阶段切换、伤害去重、团灭/击败冲突与重试均缺。",
+      "next_entry_gate": "详情或规则同时写明 Boss 阶段/招式预告、反制窗口和击败或团灭结算。"
+    },
+    {
+      "id": "defense_strategy",
+      "label": "防守/塔防",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-004.md"],
+      "boundary_refs": [],
+      "supported_claims": ["路线分期开启", "波次与经济依赖", "职业状态和后台单位性能分账"],
+      "next_gap": "实际建造/升级、至少两波、寻路射程、卡怪漏怪、失败清理和第二局仍缺。",
+      "next_entry_gate": "可单人完成一次建造或升级并连续观察两波及一次失败或回合清理。"
+    },
+    {
+      "id": "stealth_infiltration",
+      "label": "潜行/渗透",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/exemplars/case-008.md"],
+      "supported_claims": [],
+      "next_gap": "视线边界、遮蔽、两级警戒、工具反制、目标提交和变化后撤离均缺正向案例。",
+      "next_entry_gate": "详情至少出现传感范围、警戒升级/恢复、遮蔽或工具反制，以及目标后撤离。"
+    },
+    {
+      "id": "turn_based_strategy",
+      "label": "回合策略",
+      "status": "missing",
+      "positive_refs": [],
+      "boundary_refs": [],
+      "supported_claims": [],
+      "next_gap": "行动权、合法动作、提交/解析、换手、私密信息、平局与第二局均无正式案例。",
+      "next_entry_gate": "详情明确当前行动者、合法动作、提交/解析阶段和换手/终局，而非只有棋盘或卡牌外观。"
+    },
+    {
+      "id": "sports_match",
+      "label": "体育对局",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/exemplars/case-021.md"],
+      "supported_claims": [],
+      "next_gap": "控球、同时触球、场界、死球重启、合法得分、加时和多人公平均缺正向案例。",
+      "next_entry_gate": "只接受确切地图码或榜单详情明确写出比分、场界及死球/开球重启的单项比赛。"
+    },
+    {
+      "id": "sandbox_creation",
+      "label": "创造沙盒",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/exemplars/case-011.md"],
+      "supported_claims": [],
+      "next_gap": "已有固定配方建造/拆除/存档的反例；自由部件预览、预算/所有权、撤销删除、保存加载与编辑—测试返回仍无正向案例。",
+      "next_entry_gate": "详情同时出现预览放置、预算或所有权、撤销/删除、保存或测试中的至少两个状态信号。"
+    },
+    {
+      "id": "social_deduction",
+      "label": "阵营推理",
+      "status": "missing",
+      "positive_refs": [],
+      "boundary_refs": [],
+      "supported_claims": [],
+      "next_gap": "私密分角、任务/证据、报告会议、投票、淘汰权限、多阵营终局和第二局均无案例。",
+      "next_entry_gate": "详情至少出现私密分角、任务/事件、报告/会议、投票、淘汰权限、多阵营胜利中的两项，且一项涉及状态或终局。"
+    }
+  ],
+  "modifiers": [
+    {
+      "id": "rising_pressure",
+      "label": "上涨压力",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-024.md"],
+      "boundary_refs": [],
+      "supported_claims": ["全局压力面与路线危险色"],
+      "next_gap": "慢路线余量、检查点冲突、终点同帧优先级与重进清理未实测。",
+      "next_entry_gate": "能观察压力启动、最慢合法路线、检查点和终局冲突。"
+    },
+    {
+      "id": "escort_collection",
+      "label": "护送/收集",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-019.md",
+        "skill:eggy-map-designer/references/exemplars/case-015.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["可见任务对象", "章节交付和丢失恢复需求"],
+      "next_gap": "对象越界、持有者死亡、重复交付和检查点快照未实测。",
+      "next_entry_gate": "共享对象有明确身份、交付提交和丢失回收。"
+    },
+    {
+      "id": "vehicles",
+      "label": "载具",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-001.md"],
+      "boundary_refs": [],
+      "supported_claims": ["车辆产品装配族", "赛道职责分层和长尺度边界"],
+      "next_gap": "低中高速转向、制动、上下车中断、相机和卡死恢复未实测。",
+      "next_entry_gate": "可在短时内完成一圈并观察三档速度、最紧弯和载具替换。"
+    },
+    {
+      "id": "asymmetric_roles",
+      "label": "非对称角色",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/exemplars/case-009.md"],
+      "supported_claims": [],
+      "next_gap": "私有信息、独占能力、反制、缺角/迟到、换边与第二局均缺。",
+      "next_entry_gate": "至少两种不同角色拥有独占能力与可读反制，并写明缺员或换边。"
+    },
+    {
+      "id": "rhythm",
+      "label": "节奏",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/exemplars/case-016.md"],
+      "supported_claims": [],
+      "next_gap": "唯一时钟、音画同源、判定、延迟和静音降级均缺。",
+      "next_entry_gate": "仅接受详情具备明确判定和分数/连击信号的确切地图码。"
+    },
+    {
+      "id": "horror",
+      "label": "恐怖",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-013.md"],
+      "boundary_refs": [],
+      "supported_claims": ["正常秩序与侵蚀层", "旅馆入口、房间和钥匙状态词汇"],
+      "next_gap": "威胁预告、反制、冷却、安全空间和感官降级仍缺。",
+      "next_entry_gate": "能观察一次完整威胁预告—反制—冷却及失败恢复。"
+    },
+    {
+      "id": "vertical_climb",
+      "label": "垂直攀登",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-005.md",
+        "skill:eggy-map-designer/references/exemplars/case-023.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["纵向章节体量", "海洋垂直路线与存档/救援分账"],
+      "next_gap": "最大坠落、仰视相机、跨层捷径、头顶净空和拥堵未实测。",
+      "next_entry_gate": "能验证最高坠落恢复、至少三个垂直层和一个跨层捷径。"
+    },
+    {
+      "id": "random_variation",
+      "label": "随机变化",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-022.md"],
+      "boundary_refs": [],
+      "supported_claims": ["随机场地/天气与回合状态线索"],
+      "next_gap": "极端种子、组合兼容、多人一致性和旧代清理未实测。",
+      "next_entry_gate": "能连续观察至少两局随机生成及一种极端/无候选回退。"
+    },
+    {
+      "id": "cumulative_growth",
+      "label": "累计成长",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-012.md"],
+      "boundary_refs": [],
+      "supported_claims": ["单输入成长档位", "模块化赛道与视觉/逻辑分账"],
+      "next_gap": "输入去重、封顶、死亡继承、最快状态相机和整局重置未实测。",
+      "next_entry_gate": "可观察最小/中间/最大成长档、死亡恢复和重新开局。"
+    },
+    {
+      "id": "destructible_world",
+      "label": "破坏/拆解",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-002.md"],
+      "boundary_refs": [],
+      "supported_claims": ["可毁房间静态代码骨架", "稳定房间身份、依赖面和奖励事务需求", "窄词汇高展开边界"],
+      "next_gap": "实际命中去重、受损反馈、依赖面安全、奖励原子性、碎片峰值和第二次进入未实测。",
+      "next_entry_gate": "能完整拆完一个房间并立即复测第二次进入。"
+    }
+  ],
+  "visual_worlds": [
+    {
+      "id": "canyon_mountain_cave",
+      "label": "峡谷/山地/洞穴",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-005.md"],
+      "boundary_refs": [],
+      "supported_claims": ["大轮廓、岩层基础件、章节体量和路线颜色"],
+      "next_gap": "洞穴—外景转场、中后段镜头、坠落恢复和峰值视区未完整观察。",
+      "next_entry_gate": "可控中后段镜头覆盖洞穴/外景转场和一次坠落恢复。"
+    },
+    {
+      "id": "tropical_mud_character_world",
+      "label": "热带泥地/角色场景",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-015.md"],
+      "boundary_refs": [],
+      "supported_claims": ["泥地包裹、角色比例锚点和基础几何高复用"],
+      "next_gap": "完整交接后的环境状态变化和双人镜头未实测。",
+      "next_entry_gate": "角色动作前后有同机位场景变化并允许双人观察。"
+    },
+    {
+      "id": "winter_garden_showcase",
+      "label": "冬季花园/展示",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-020.md"],
+      "boundary_refs": [],
+      "supported_claims": ["前中远景深、窄植被词汇和装饰性能职责"],
+      "next_gap": "完整地标网络、多人合影净空和实测帧率未完成。",
+      "next_entry_gate": "至少三个地标、两个合影视角和目标设备性能记录。"
+    },
+    {
+      "id": "cellar_food_facility",
+      "label": "酒窖/食品设施",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-024.md"],
+      "boundary_refs": [],
+      "supported_claims": ["连续封闭包裹、危险色和单基础件高复用"],
+      "next_gap": "后段设备结构、上涨面与路线同时可读仍缺。",
+      "next_entry_gate": "可控后段镜头同时呈现环境设备、压力面和下一路线。"
+    },
+    {
+      "id": "modern_city_narrative",
+      "label": "现代城市/剧情空间",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-017.md"],
+      "boundary_refs": [],
+      "supported_claims": ["楼体/公园/室内门槛、近景任务物和设施状态变化"],
+      "next_gap": "回访、夜景/天气状态、完整结局和加载重建未验证。",
+      "next_entry_gate": "同机位覆盖至少一种城市状态变化和一次回访/重载。"
+    },
+    {
+      "id": "school_human_scale_interior",
+      "label": "学校/人类尺度室内",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-008.md",
+        "skill:eggy-map-designer/references/exemplars/case-014.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["房间壳体、家具簇、门窗/管线和工作站净空"],
+      "next_gap": "连续多房间动线与真实高频操作镜头仍缺。",
+      "next_entry_gate": "能连续穿越三个功能房并完成一次高频工作站操作。"
+    },
+    {
+      "id": "industrial_mixed_scale",
+      "label": "工业/混合尺度",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-003.md",
+        "skill:eggy-map-designer/references/exemplars/case-002.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["工厂门洞四层构成", "罐体/管线第二轮廓", "墙板/梁格/坡道和焦点装置"],
+      "next_gap": "完整生产动线、设备状态闭环、场景转场和状态重进未验证。",
+      "next_entry_gate": "可控完成一段生产动线并观察设备前后状态与场景返回。"
+    },
+    {
+      "id": "island_survival_world",
+      "label": "岛屿/生存资源世界",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-011.md"],
+      "boundary_refs": [],
+      "supported_claims": ["资源—建筑依赖、世界快照和扩张空间职责"],
+      "next_gap": "建造前后同机位、扩张边界、昼夜天气与峰值性能未验证。",
+      "next_entry_gate": "能完成一次建造升级并保留前后同机位与目标设备性能数据。"
+    },
+    {
+      "id": "vehicle_track_facility",
+      "label": "车辆/赛道设施",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-001.md"],
+      "boundary_refs": [],
+      "supported_claims": ["车辆产品族、赛道职责层和长尺度边界"],
+      "next_gap": "道路侧脸、护栏、弯道视距和高速镜头未实测。",
+      "next_entry_gate": "可完成一圈并采集直道、最紧弯和高速落差三处可控镜头。"
+    },
+    {
+      "id": "toy_candy_fairy_miniature",
+      "label": "玩具/糖果/童话/微缩",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-003.md",
+        "skill:eggy-map-designer/references/exemplars/case-002.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": ["玩具工厂壳体、焦点道具、工具动词和超大厨房比例线索"],
+      "next_gap": "完整微缩路线、两个熟悉尺度锚点、拼接包装材质语法与尺度转场仍缺。",
+      "next_entry_gate": "可控路线连续经过至少两个日常物尺度锚点并发生一次明确尺度转场。"
+    },
+    {
+      "id": "ancient_castle_historic_street",
+      "label": "古建/城堡/历史街区",
+      "status": "missing",
+      "positive_refs": [],
+      "boundary_refs": [],
+      "supported_claims": [],
+      "next_gap": "城门、屋顶线、街巷、立面模块、承重和排水关系均无合格样本。",
+      "next_entry_gate": "只用确切地图码或当前榜单候选；首屏和代码同时支持街区壳体与结构模块。"
+    },
+    {
+      "id": "scifi_station_cyber_facility",
+      "label": "科幻/空间站/赛博设施",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/research-portfolio.md"],
+      "supported_claims": [],
+      "next_gap": "可控首屏舱段/气闸/能源环、断电恢复、面板厚度和稳定性能仍缺。",
+      "next_entry_gate": "取得控制后能读出下一舱段和方向，并有至少一种断电—恢复状态。"
+    },
+    {
+      "id": "ocean_underwater_floating",
+      "label": "海洋/海底/漂浮世界",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-023.md"],
+      "boundary_refs": [],
+      "supported_claims": ["珊瑚近景、路线中景、雾化海床远景和冷暖分工"],
+      "next_gap": "连续探索地标网络、流动/潮位/能见度状态和后续视区性能仍缺。",
+      "next_entry_gate": "身份链稳定，能连续观察海床—洞口—沉船或三个可返回海洋地标。"
+    },
+    {
+      "id": "horror_ruin_mystery",
+      "label": "恐怖/废墟/悬疑空间",
+      "status": "partial_positive",
+      "positive_refs": ["skill:eggy-map-designer/references/exemplars/case-013.md"],
+      "boundary_refs": [],
+      "supported_claims": ["正常秩序与侵蚀层、重复窗格、门槛和荒败细节"],
+      "next_gap": "正常—异常同机位、楼内路线、安全区、黑暗可读性和威胁循环仍缺。",
+      "next_entry_gate": "能观察同机位状态变化、可信安全区和一次威胁恢复。"
+    },
+    {
+      "id": "abstract_dream_music_data",
+      "label": "抽象/梦境/音乐/数据空间",
+      "status": "boundary_only",
+      "positive_refs": [],
+      "boundary_refs": ["skill:eggy-map-designer/references/research-portfolio.md"],
+      "supported_claims": [],
+      "next_gap": "高完成度、可复述几何规则、可控首屏和音画/状态同源均缺正向案例。",
+      "next_entry_gate": "首屏有清楚宏观轮廓、中层结构和路线，且几何变化与一个权威状态同源。"
+    }
+  ],
+  "hybrid_pairs": [
+    {
+      "id": "defense_strategy+management_simulation@phase_shift",
+      "label": "防守主 × 经营次",
+      "primary_type": "defense_strategy",
+      "secondary_type": "management_simulation",
+      "combination_mode": "phase_shift",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-004.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": [
+        "防守波次保持终局权威，经济依赖改变下一波可用防线",
+        "生产建设、路线分期开启和波次反制需要明确阶段交接"
+      ],
+      "next_gap": "尚未实测建造或升级、连续两波、切波冻结、漏怪与加工同帧、失败清理和第二局库存代次。",
+      "next_entry_gate": "同一张地图中完成一次生产或升级，连续观察两波，并记录经营冻结、波次结算和返回经营阶段。"
+    },
+    {
+      "id": "management_simulation+survival@overlay",
+      "label": "经营主 × 生存次",
+      "primary_type": "management_simulation",
+      "secondary_type": "survival",
+      "combination_mode": "overlay",
+      "status": "partial_positive",
+      "positive_refs": [
+        "skill:eggy-map-designer/references/exemplars/case-011.md"
+      ],
+      "boundary_refs": [],
+      "supported_claims": [
+        "持续生存压力为采集、制作、菜单和建造增加时间成本",
+        "固定配方依赖与可见世界扩张共同构成长期经营选择"
+      ],
+      "next_gap": "首次完整生产、生存压力失控、死亡恢复、升级后新瓶颈、多人归属及保存读取均未实测。",
+      "next_entry_gate": "同一局中完成输入—加工—建造或交付，并观察至少一次生存压力后果、恢复与干净重进。"
+    }
+  ]
+}
