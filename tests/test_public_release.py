@@ -8,6 +8,9 @@ import pytest
 
 from eggy_map_api.catalog import open_package_catalog
 from eggy_map_api.capabilities import runtime_component_capability
+from eggy_map_api.catalog_bundle import build_catalog_bundle
+from eggy_map_api.errors import DeviceError
+from eggy_map_mcp.service import EggyMapService
 from test_catalog_bundle import write_synthetic_sources
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,3 +67,29 @@ def test_coverage_only_references_shipped_anonymous_evidence():
                 assert path.is_file()
                 if path.parent.name == "exemplars":
                     assert path.stem.startswith("case-")
+
+
+def test_catalog_service_starts_without_adb_but_device_operations_fail_closed(
+    tmp_path, monkeypatch
+):
+    monkeypatch.setenv("EGGY_ADB_PATH", str(tmp_path / "unavailable-adb"))
+    source, decoded = write_synthetic_sources(tmp_path)
+    bundle = build_catalog_bundle(
+        catalog_directory=source,
+        decoded_bindicts=decoded,
+        output=tmp_path / "bundle",
+        version_code=1,
+        version_name="synthetic",
+        apk_sha256="0" * 64,
+    )
+    service = EggyMapService(
+        catalog_manifest=bundle / "catalog-manifest.json",
+        data_directory=tmp_path / "runtime",
+    )
+    assert service.search_components("platform")["total"] == 1
+    assert service._adb is None
+    for operation in (service.device_status, lambda: service.transactions):
+        with pytest.raises(DeviceError) as caught:
+            operation()
+        assert caught.value.error_code == "ADB_NOT_FOUND"
+    assert service._transactions is None

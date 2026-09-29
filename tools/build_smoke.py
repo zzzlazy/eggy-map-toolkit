@@ -28,6 +28,8 @@ async def handshake(plugin: Path, data: Path) -> None:
         **os.environ,
         "EGGY_MAP_BOOTSTRAP_PYTHON": sys.executable,
         "EGGY_MAP_DATA_DIR": str(data),
+        # Explicitly prevent accidental reliance on a developer's installed ADB.
+        "EGGY_ADB_PATH": str(data / "intentionally-unavailable-adb"),
     }
     env.pop("EGGY_MAP_CATALOG_MANIFEST", None)
     params = StdioServerParameters(

@@ -130,11 +130,24 @@ class EggyMapService:
         self.catalog = CompiledCatalog(
             catalog_manifest, data_directory=self.store.catalog
         )
-        self.adb = adb or AdbClient()
-        self.transactions = TransactionCoordinator(
-            adb=self.adb, store=self.store, catalog=self.catalog
-        )
+        self._adb = adb
+        self._transactions: TransactionCoordinator | None = None
         self._package_catalog = None
+
+    @property
+    def adb(self) -> AdbClient:
+        # Catalog queries and MCP discovery must not require device tooling.
+        if self._adb is None:
+            self._adb = AdbClient()
+        return self._adb
+
+    @property
+    def transactions(self) -> TransactionCoordinator:
+        if self._transactions is None:
+            self._transactions = TransactionCoordinator(
+                adb=self.adb, store=self.store, catalog=self.catalog
+            )
+        return self._transactions
 
     def _runtime_catalog(self):
         if self._package_catalog is None:

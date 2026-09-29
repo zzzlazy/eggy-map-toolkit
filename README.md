@@ -56,7 +56,7 @@ python -m eggy_map_mcp
 
 上述命令启动 STDIO MCP，供 MCP 客户端连接。它不会显示网页或交互式命令提示符。也可以在 MCP 客户端配置 `.venv/bin/python -m eggy_map_mcp`，并传入这两个环境变量的绝对路径。
 
-需要 ADB、用户授权的设备访问，以及唯一、符合版本与权限检查的 MuMu 实例。启动服务不代表通过设备写入检查；先调用 `device_status` 查看实际模式。缺少组件目录会返回准备步骤。
+MCP 启动和本地组件查询不需要 ADB。实际设备操作需要 ADB、用户授权的设备访问，以及唯一、符合版本与权限检查的 MuMu 实例。启动服务不代表通过设备写入检查；先调用 `device_status` 查看实际模式，缺少 ADB 时返回 `ADB_NOT_FOUND`。缺少组件目录会返回准备步骤。
 
 ### 构建三个 Skill + MCP 的本地插件
 
